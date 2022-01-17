@@ -1,5 +1,7 @@
-import {initializeApp} from 'firebase/app';
-
+import { initializeApp } from "firebase/app";
+import {getFirestore} from "firebase/firestore";
+import { getAuth, GoogleAuthProvider } from 'firebase/auth';
+import { getStorage, ref } from "firebase/storage";
 
 const firebaseConfig = {
     apiKey: "AIzaSyB5d7ESxHzHUFOu-z0wT54ac6fmmax0O_0",
@@ -13,5 +15,18 @@ const firebaseConfig = {
 
   const app = initializeApp(firebaseConfig);
 
+  const db = getFirestore(app);
+  const auth = getAuth(app);
+  const storage = getStorage();
+
+export { db, auth, storage };
+
+// Create a reference to 'mountains.jpg'
+// const mountainsRef = ref(storage, 'mountains.jpg')
+
+// Create a child reference
+// const imagesRef = ref(storage, 'images');
+// imagesRef now points to 'images'
 
 
+// export const provider = new GoogleAuthProvider();
