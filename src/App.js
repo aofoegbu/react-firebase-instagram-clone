@@ -17,7 +17,7 @@ function App() {
   }, []);
 
   return (
-    <div className="App">
+    <div className="App"> 
       <div className="app_header">
         <img  className="app_headerImage" src='https:www.instagram.com/statc/images/web/mobile' alt='Instagram Logo' />
       </div>
