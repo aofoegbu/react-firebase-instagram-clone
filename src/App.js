@@ -6,7 +6,8 @@ import { db, auth } from './firebase-config';
 function App() {
 
   const [posts, setPosts] = useState([]);
-
+  // const [posts, setPosts] = useState([]);
+  
   useEffect(() => {
     db.collection('posts').onSnapshot(snapshot => {
       setPosts(snapshot.docs.map((doc) => ({
